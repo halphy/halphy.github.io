@@ -1,0 +1,36 @@
+---
+export interface Props {
+	url: string | undefined;
+	title: string;
+}
+
+export interface Image {
+	url: string;
+	alt: string;
+}
+
+const { url, title } = Astro.props;
+---
+
+<li class="link-card">
+	<a href={url ?? "/"}>{title}</a>
+</li>
+
+<style lang="scss">
+	@import "../styles/_variables.scss";
+
+	.link-card {
+		// list-style: none;
+		margin: 4px 0;
+
+		a {
+			text-decoration: none;
+
+			color: $blue-dark;
+
+			&:hover {
+				color: $blue-ultralight;
+			}
+		}
+	}
+</style>
