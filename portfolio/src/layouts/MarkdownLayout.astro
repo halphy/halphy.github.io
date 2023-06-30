@@ -21,7 +21,9 @@ const { frontmatter } = Astro.props;
         <title>{frontmatter.title}</title>
     </head>
     <body>
-        <slot />
+        <main>
+            <slot />
+        </main>
     </body>
 </html>
 <style is:global>
@@ -38,8 +40,14 @@ const { frontmatter } = Astro.props;
         font-family: system-ui, sans-serif;
         background-color: #f6f6f6;
     }
-    code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    main {
+        display: block;
+        padding: 2rem 4rem;
+
+        code {
+            font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+                DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+                monospace;
+        }
     }
 </style>
