@@ -1,5 +1,5 @@
 ---
-layout: '../../layouts/Layout.astro'
+layout: '../../layouts/MarkdownLayout.astro'
 title: 'My Markdown page'
 ---
 # Title
