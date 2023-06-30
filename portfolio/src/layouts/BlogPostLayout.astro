@@ -1,0 +1,73 @@
+---
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.scss";
+
+export interface Props {
+    frontmatter: Frontmatter;
+}
+
+export interface Frontmatter {
+    title: string;
+    pubDate: string;
+    description: string;
+    author: string;
+    image: Image;
+    tags: string[];
+}
+
+export interface Image {
+    url: string;
+    alt: string;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <Navigation />
+        <main>
+            <div class="blogheader">
+                <p class="blogheader__date">
+                    {frontmatter.pubDate.slice(0, 10)}
+                </p>
+                <h1 class="blogheader__title">{frontmatter.title}</h1>
+                <p class="blogheader__desc">{frontmatter.description}</p>
+            </div>
+            <slot />
+        </main>
+    </body>
+</html>
+<style lang="scss">
+    @import "../styles/_variables.scss";
+
+    .blogheader {
+        border-bottom: solid 1px $blue-dark;
+        padding: 8px 0;
+
+        .blogheader__date {
+            font-size: 0.9rem;
+            color: $gray;
+
+            margin: 8px 0;
+        }
+
+        .blogheader__title {
+            font-size: 2rem;
+            margin: 8px 0;
+        }
+
+        .blogheader__desc {
+            margin: 8px 0;
+        }
+    }
+</style>

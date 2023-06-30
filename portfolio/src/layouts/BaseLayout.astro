@@ -3,14 +3,10 @@ import Navigation from "../components/Navigation.astro";
 import "../styles/global.scss";
 
 export interface Props {
-    frontmatter: Frontmatter;
-}
-
-export interface Frontmatter {
     title: string;
 }
 
-const { frontmatter } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +17,7 @@ const { frontmatter } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>{frontmatter.title}</title>
+        <title>{title}</title>
     </head>
     <body>
         <Navigation />
@@ -30,14 +26,3 @@ const { frontmatter } = Astro.props;
         </main>
     </body>
 </html>
-<style is:global>
-    :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            #da62c4 30%,
-            white 60%
-        );
-    }
-</style>
