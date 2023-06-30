@@ -2,10 +2,7 @@
 layout: '../../layouts/MarkdownLayout.astro'
 title: 'My Markdown page'
 ---
-# Title
-## Title 2
-This is my page, written in **Markdown.**
-
-- hoge
-    - fuga
-- hey
+# Profile
+- Haruo Kondo
+- M2 student (physics, The University of Tokyo)
+- GitHub: [halphy](https://github.com/halphy)
