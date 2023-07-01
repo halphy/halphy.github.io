@@ -20,6 +20,28 @@ html {
                 font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
                     DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
                     monospace;
+
+                margin: 0 0.2rem;
+                color: $blue-dark;
+            }
+
+            pre {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            a {
+                color: $blue-light;
+                text-decoration: none;
+
+                &:hover {
+                    color: $blue-ultralight;
+                    text-decoration: underline;
+                }
+            }
+
+            li {
+                margin: 0.4rem 0;
             }
         }
     }
@@ -58,8 +80,6 @@ h1 {
             transition: all 0.2s;
 
             &:hover {
-                color: $blue-ultralight;
-
                 border-bottom: solid 2px $blue-ultralight;
             }
         }
