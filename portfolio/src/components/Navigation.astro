@@ -2,7 +2,28 @@
 ---
 
 <nav class="nav-links">
-    <a href="/">HalLab</a>
-    <a href="/profile/">Profile</a>
-    <a href="/blog">Blog</a>
+    <div class="nav-links__titlecontainer">
+        <div class="nav-links__title">HalLab</div>
+        <span class="nav-links__hamburger">
+            <span></span>
+        </span>
+    </div>
+    <div class="nav-links__linkcontainer">
+        <a href="/">Home</a>
+        <a href="/profile/">Profile</a>
+        <a href="/blog">Blog</a>
+    </div>
 </nav>
+
+<script lang="ts">
+const hamburger_button = document.querySelector(".nav-links__hamburger");
+
+hamburger_button.addEventListener("click", () => {
+    document
+        .querySelector(".nav-links__hamburger")
+        .classList.toggle("nav-links__hamburger--pressed");
+    document
+        .querySelector(".nav-links__linkcontainer")
+        .classList.toggle("nav-links__linkcontainer--pressed");
+});
+</script>
