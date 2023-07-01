@@ -15,6 +15,4 @@ title: 'My Markdown page'
 - [自作問題共有サービス「ポロロッカ」](https://pororocca.com/)（Webアプリ）\[2020\]
 
 ## Projects
-- [東京大学コモンサポーター](https://utelecon.adm.u-tokyo.ac.jp/about/cs) \[2022-\]
-- [東京大学オンライン教育支援サポーター (OES)](https://utelecon.adm.u-tokyo.ac.jp/about/oes) \[2021-2023\]
 - [東京大学サイエンスコミュニケーションサークルCAST](https://ut-cast.net)（ウェブ担当）\[2018-2022\]
