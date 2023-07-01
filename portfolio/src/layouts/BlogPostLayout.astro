@@ -41,6 +41,13 @@ const { frontmatter } = Astro.props;
                     {frontmatter.pubDate.slice(0, 10)}
                 </p>
                 <h1 class="blogheader__title">{frontmatter.title}</h1>
+                <div class="blogheader__tags">
+                    {
+                        frontmatter.tags.map((tag) => (
+                            <span class="blogheader__tags--item">{tag}</span>
+                        ))
+                    }
+                </div>
                 <p class="blogheader__desc">{frontmatter.description}</p>
             </div>
             <slot />
@@ -66,8 +73,23 @@ const { frontmatter } = Astro.props;
             margin: 8px 0;
         }
 
+        .blogheader__tags {
+            .blogheader__tags--item {
+                border: solid 1px $blue-normal;
+                border-radius: 0.1rem;
+
+                padding: 0.1rem 0.2rem;
+                margin-right: 0.2rem;
+
+                font-size: 0.8rem;
+                color: $blue-normal;
+            }
+        }
+
         .blogheader__desc {
             margin: 8px 0;
+
+            color: $gray;
         }
     }
 </style>

@@ -2,6 +2,7 @@
 export interface Props {
 	url: string | undefined;
 	title: string;
+	pubDate: string;
 }
 
 export interface Image {
@@ -9,11 +10,12 @@ export interface Image {
 	alt: string;
 }
 
-const { url, title } = Astro.props;
+const { url, title, pubDate } = Astro.props;
 ---
 
 <li class="link-card">
 	<a href={url ?? "/"}>{title}</a>
+	<span class="link-card__date">[{pubDate.slice(0, 10)}]</span>
 </li>
 
 <style lang="scss">
@@ -23,15 +25,11 @@ const { url, title } = Astro.props;
 		// list-style: none;
 		margin: 4px 0;
 
-		a {
-			text-decoration: none;
+		.link-card__date {
+			margin: 0 0.4rem;
+			color: $gray;
 
-			color: $blue-dark;
-
-			&:hover {
-				color: $blue-normal;
-				text-decoration: underline;
-			}
+			font-size: 0.8rem;
 		}
 	}
 </style>

@@ -11,7 +11,11 @@ const title = "Blog";
     <div>
         {
             allPosts.map((post) => (
-                <BlogEntry url={post.url} title={post.frontmatter.title} />
+                <BlogEntry
+                    url={post.url}
+                    title={post.frontmatter.title}
+                    pubDate={post.frontmatter.pubDate}
+                />
             ))
         }
     </div>
