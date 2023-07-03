@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/MarkdownLayout.astro'
-title: 'My Markdown page'
+title: 'Profile'
 ---
 # Profile
 ## Basic Info
