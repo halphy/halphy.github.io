@@ -16,6 +16,8 @@ html {
             display: block;
             padding: 2rem 2rem;
 
+            overflow-wrap: break-word;
+
             @include mq(md) {
                 padding: 2rem 4rem;
             }
