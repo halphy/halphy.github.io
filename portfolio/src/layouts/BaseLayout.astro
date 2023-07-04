@@ -9,8 +9,9 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-const header_title = `${title} - HalLab`;
+const headerTitle = `${title} - HalLab`;
 const description = "halphy's personal web site";
+const ogImageURL = new URL("/assets/og-image.png", Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -18,18 +19,18 @@ const description = "halphy's personal web site";
     <head>
         <SEO
             charset="UTF-8"
-            title={header_title}
+            title={headerTitle}
             description={description}
             openGraph={{
                 basic: {
-                    title: header_title,
+                    title: headerTitle,
                     type: "website",
-                    image: "/assets/og-image.png",
+                    image: ogImageURL.href,
                     url: Astro.url.href,
                 },
             }}
             twitter={{
-                title: header_title,
+                title: headerTitle,
                 description: description,
             }}
             extend={{
