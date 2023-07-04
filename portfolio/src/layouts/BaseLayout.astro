@@ -11,6 +11,7 @@ export interface Props {
 const { title } = Astro.props;
 const header_title = `${title} - HalLab`;
 const description = "halphy's personal web site";
+const ogImageURL = new URL("/assets/og-image.png", Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -24,7 +25,7 @@ const description = "halphy's personal web site";
                 basic: {
                     title: header_title,
                     type: "website",
-                    image: "/assets/og-image.png",
+                    image: ogImageURL.href,
                     url: Astro.url.href,
                 },
             }}

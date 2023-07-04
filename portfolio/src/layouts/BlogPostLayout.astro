@@ -24,6 +24,7 @@ export interface Image {
 
 const { frontmatter } = Astro.props;
 const title = `${frontmatter.title} - HalLab`;
+const ogImageURL = new URL("/assets/og-image.png", Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -37,7 +38,7 @@ const title = `${frontmatter.title} - HalLab`;
                 basic: {
                     title: title,
                     type: "website",
-                    image: "/assets/og-image.png",
+                    image: ogImageURL.href,
                     url: Astro.url.href,
                 },
             }}

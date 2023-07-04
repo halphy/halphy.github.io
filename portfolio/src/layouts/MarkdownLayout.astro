@@ -15,6 +15,7 @@ export interface Frontmatter {
 const { frontmatter } = Astro.props;
 const title = `${frontmatter.title} - HalLab`;
 const description = "halphy's personal web site";
+const ogImageURL = new URL("/assets/og-image.png", Astro.url);
 ---
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ const description = "halphy's personal web site";
                 basic: {
                     title: title,
                     type: "website",
-                    image: "/assets/og-image.png",
+                    image: ogImageURL.href,
                     url: Astro.url.href,
                 },
             }}
@@ -63,15 +64,16 @@ const description = "halphy's personal web site";
         <main>
             <slot />
         </main>
-    </body><style is:global>
-        :root {
-            --accent: 124, 58, 237;
-            --accent-gradient: linear-gradient(
-                45deg,
-                rgb(var(--accent)),
-                #da62c4 30%,
-                white 60%
-            );
-        }
-    </style>
+        <style is:global>
+            :root {
+                --accent: 124, 58, 237;
+                --accent-gradient: linear-gradient(
+                    45deg,
+                    rgb(var(--accent)),
+                    #da62c4 30%,
+                    white 60%
+                );
+            }
+        </style>
+    </body>
 </html>
