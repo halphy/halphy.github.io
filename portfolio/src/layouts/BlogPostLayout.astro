@@ -1,4 +1,6 @@
 ---
+import { SEO } from "astro-seo";
+
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.scss";
 
@@ -21,23 +23,49 @@ export interface Image {
 }
 
 const { frontmatter } = Astro.props;
+const title = `${frontmatter.title} - HalLab`;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-            integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0"
-            crossorigin="anonymous"
+        <SEO
+            charset="UTF-8"
+            title={title}
+            description={frontmatter.description}
+            openGraph={{
+                basic: {
+                    title: title,
+                    type: "website",
+                    image: "/assets/og-image.png",
+                    url: Astro.url.href,
+                },
+            }}
+            twitter={{
+                title: title,
+                description: frontmatter.description,
+            }}
+            extend={{
+                link: [
+                    {
+                        rel: "icon",
+                        type: "image/svg+xml",
+                        href: "/assets/favicon.svg",
+                    },
+                    {
+                        rel: "stylesheet",
+                        href: "https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css",
+                        integrity:
+                            "sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0",
+                        crossorigin: "anonymous",
+                    },
+                ],
+                meta: [
+                    { name: "viewport", content: "width=device-width" },
+                    { name: "generator", content: Astro.generator },
+                ],
+            }}
         />
-        <meta name="generator" content={Astro.generator} />
-        <title>{frontmatter.title} - HalLab</title>
     </head>
     <body>
         <Navigation />
@@ -58,44 +86,44 @@ const { frontmatter } = Astro.props;
             </div>
             <slot />
         </main>
+        <style lang="scss">
+            @import "../styles/_variables.scss";
+
+            .blogheader {
+                border-bottom: solid 1px $blue-dark;
+                padding: 8px 0;
+
+                .blogheader__date {
+                    font-size: 0.9rem;
+                    color: $gray;
+
+                    margin: 8px 0;
+                }
+
+                .blogheader__title {
+                    font-size: 2rem;
+                    margin: 8px 0;
+                }
+
+                .blogheader__tags {
+                    .blogheader__tags--item {
+                        border: solid 1px $blue-normal;
+                        border-radius: 0.1rem;
+
+                        padding: 0.1rem 0.2rem;
+                        margin-right: 0.2rem;
+
+                        font-size: 0.8rem;
+                        color: $blue-normal;
+                    }
+                }
+
+                .blogheader__desc {
+                    margin: 8px 0;
+
+                    color: $gray;
+                }
+            }
+        </style>
     </body>
 </html>
-<style lang="scss">
-    @import "../styles/_variables.scss";
-
-    .blogheader {
-        border-bottom: solid 1px $blue-dark;
-        padding: 8px 0;
-
-        .blogheader__date {
-            font-size: 0.9rem;
-            color: $gray;
-
-            margin: 8px 0;
-        }
-
-        .blogheader__title {
-            font-size: 2rem;
-            margin: 8px 0;
-        }
-
-        .blogheader__tags {
-            .blogheader__tags--item {
-                border: solid 1px $blue-normal;
-                border-radius: 0.1rem;
-
-                padding: 0.1rem 0.2rem;
-                margin-right: 0.2rem;
-
-                font-size: 0.8rem;
-                color: $blue-normal;
-            }
-        }
-
-        .blogheader__desc {
-            margin: 8px 0;
-
-            color: $gray;
-        }
-    }
-</style>

@@ -1,4 +1,6 @@
 ---
+import { SEO } from "astro-seo";
+
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.scss";
 
@@ -11,33 +13,65 @@ export interface Frontmatter {
 }
 
 const { frontmatter } = Astro.props;
+const title = `${frontmatter.title} - HalLab`;
+const description = "halphy's personal web site";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{frontmatter.title} - HalLab</title>
+        <SEO
+            charset="UTF-8"
+            title={title}
+            description={description}
+            openGraph={{
+                basic: {
+                    title: title,
+                    type: "website",
+                    image: "/assets/og-image.png",
+                    url: Astro.url.href,
+                },
+            }}
+            twitter={{
+                title: title,
+                description: description,
+            }}
+            extend={{
+                link: [
+                    {
+                        rel: "icon",
+                        type: "image/svg+xml",
+                        href: "/assets/favicon.svg",
+                    },
+                    {
+                        rel: "stylesheet",
+                        href: "https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css",
+                        integrity:
+                            "sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0",
+                        crossorigin: "anonymous",
+                    },
+                ],
+                meta: [
+                    { name: "viewport", content: "width=device-width" },
+                    { name: "generator", content: Astro.generator },
+                ],
+            }}
+        />
     </head>
     <body>
         <Navigation />
         <main>
             <slot />
         </main>
-    </body>
+    </body><style is:global>
+        :root {
+            --accent: 124, 58, 237;
+            --accent-gradient: linear-gradient(
+                45deg,
+                rgb(var(--accent)),
+                #da62c4 30%,
+                white 60%
+            );
+        }
+    </style>
 </html>
-<style is:global>
-    :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            #da62c4 30%,
-            white 60%
-        );
-    }
-</style>
