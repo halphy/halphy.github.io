@@ -10,7 +10,7 @@ const title = "Blog";
     <h1>Blog Posts</h1>
     <div>
         {
-            allPosts.map((post) => (
+            allPosts.sort((a, b) => (Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate))).map((post) => (
                 <BlogEntry
                     url={post.url}
                     title={post.frontmatter.title}

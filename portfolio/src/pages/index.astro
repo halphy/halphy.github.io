@@ -18,7 +18,7 @@ const title = "Home";
 		<h2>Recent Posts</h2>
 		<div>
 			{
-				allPosts.map((post) => (
+				allPosts.sort((a, b) => (Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate))).map((post) => (
 					<BlogEntry
 						url={post.url}
 						title={post.frontmatter.title}
