@@ -5,8 +5,12 @@ title: 'Profile'
 # Profile
 ## Basic Info
 - Haruo Kondo
-- M2 student (physics, The University of Tokyo)
 - GitHub: [halphy](https://github.com/halphy)
+
+## Affiliation
+- [2022/04-2024/03] [東京大学大学院理学系研究科物理学専攻](https://www.phys.s.u-tokyo.ac.jp/) - [林研究室](http://qspin.phys.s.u-tokyo.ac.jp/jp/)
+- [2020/04-2022/03] 東京大学理学部物理学科
+- [2018/04-2020/03] 東京大学教養学部
 
 ## Works
 - [東京大学理学部物理学科学生展示「Physics Lab. 2021」](https://event.phys.s.u-tokyo.ac.jp/physlab2021/)（Webサイト）\[2021\]
