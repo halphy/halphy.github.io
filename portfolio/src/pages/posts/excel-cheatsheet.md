@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogPostLayout.astro'
 title: '競技Excelチートシート'
-pubDate: 2022-09-27
+pubDate: 2023-09-27
 description: 'Excelの関数を使った競技プログラミングもどき「競技Excel」のためのチートシート'
 author: 'halphy'
 tags: ["Excel"]
