@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogPostLayout.astro'
 title: 'AtCoder Beginner Contest 308に参加した'
-pubDate: 2022-07-03
+pubDate: 2023-07-03
 description: 'ABC308の参加記．'
 author: 'halphy'
 tags: ["競プロ", "アルゴ", "AtCoder"]
