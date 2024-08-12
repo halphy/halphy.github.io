@@ -73,6 +73,6 @@ $$
 
 定石に従い，桁ごとに考えて最後にそれぞれの項の和への寄与を足しあげることにする（$d$桁目には係数として$\times 2^d$がかかる）．bitwise XORの定義から，$A_l\oplus \cdots\oplus A_{r-1}$の$d$桁目というのは$A_l, \cdots, A_{r-1}$の$d$桁目に$1$が奇数個あれば$1$，偶数個あれば$0$になる．
 
-よって，長さ$N$の01列の中で奇数個の$1$を含むような区間を数え上げればよく，これは累積和を${\rm mod} \;2$で構築し値が異なるペアを数えればOK（01列$x_1,\cdots, x_N$に対して，$[l, r)$が奇数個の$1$を含む $\Leftrightarrow$累積和を$s_i\equiv \sum_{j\in [0, i)}x_j$としたとき$s_r-s_l$が奇数$\Leftrightarrow\; s_l\not\equiv s_r\pmod 2$）．最後に幅1の区間を計算結果から除外することを忘れない．
+よって，長さ$N$の01列の中で奇数個の$1$を含むような区間を数え上げればよく，これは累積和を${\rm mod} \;2$で構築し値が異なるペアを数えればOK（01列$x_1,\cdots, x_N$に対して，$[l, r)$が奇数個の$1$を含む $\Leftrightarrow$累積和を$s_i\equiv \sum_{j\in [1, i)}x_j$としたとき$s_r-s_l$が奇数$\Leftrightarrow\; s_l\not\equiv s_r\pmod 2$）．最後に幅1の区間を計算結果から除外することを忘れない．
 
 提出：https://atcoder.jp/contests/abc365/submissions/56272194
