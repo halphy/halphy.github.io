@@ -49,8 +49,13 @@ html {
                 margin: 0.4rem 0;
             }
 
+            .katex-display {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
             .katex {
-                margin: 0 0.1rem;
+                margin: 0 0.2rem;
             }
         }
     }
