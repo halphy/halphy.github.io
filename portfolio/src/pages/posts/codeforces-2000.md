@@ -7,7 +7,7 @@ author: 'halphy'
 tags: ["競プロ", "アルゴ", "Codeforces"]
 ---
 
-8月13日に開催された，[Codeforces Round 966 (Div. 3)](https://codeforces.com/contest/2000)に参加した．ABCDEFGの7完で275位．
+8月13日に開催された[Codeforces Round 966 (Div. 3)](https://codeforces.com/contest/2000)に参加した．結果はABCDEFGの7完で275位．
 
 Div. 3はコンテスト終了後にHackのフェーズが12時間ありその後でようやくシステムテストが始まるので，レート更新を待つ時間が永遠に感じられた．
 
