@@ -7,7 +7,7 @@ author: 'halphy'
 tags: ["競プロ", "アルゴ", "Codeforces"]
 ---
 
-9月1日に開催された[Codeforces Round 970 (Div. 3)](https://codeforces.com/contest/2008)に参加した．ABCDEFGの7完で461位．
+9月1日に開催された[Codeforces Round 970 (Div. 3)](https://codeforces.com/contest/2008)に参加した．ABCDEFGの7完で489位．
 
 ## A - Sakurako's Exam
 
